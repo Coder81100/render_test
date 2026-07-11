@@ -3,6 +3,8 @@ const app = express()
 
 app.use(express.json()) // without the json-parser middleware, the request.body property would be undefined. The json-parser takes the JSON data of a request, transforms it into a JavaScript object and then attaches it to the body property of the request object before route handler is called.
 
+app.use(express.static("dist"))
+
 const morgan = require("morgan") // https://github.com/expressjs/morgan
 
 morgan.token("body", (request) => JSON.stringify(request.body))
