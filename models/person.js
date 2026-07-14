@@ -42,7 +42,7 @@ const personSchema = new mongoose.Schema({
   },
 })
 
-// il frontend si aspetta una stringa id unica. even if _id property of Mongoose objects looks like a string, it is in an object. toJSON method below transforms it into a string. Without this, it would cause more harm once we start writing tests
+// frontend si aspetta una stringa id unica. even if _id property of Mongoose objects looks like a string, it is in an object. toJSON method below transforms it into a string. Without this, it would cause more harm once we start writing tests
 
 personSchema.set("toJSON", {
   transform: (document, returnedObject) => {
